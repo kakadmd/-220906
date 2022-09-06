@@ -9,6 +9,7 @@
     <!-- rules：是一个数组 里面是对象
          rules：{required：是否必选，message：错误提示文案，pattern：正则，trigger：规则的触发时机onBlur，onChange} -->
     <van-form @submit="onSubmit" class="form">
+
       <van-field
         v-model="mobile"
         name="mobile"
@@ -43,6 +44,7 @@
       <div style="margin: 16px">
         <van-button block type="info" native-type="submit">登录</van-button>
       </div>
+
     </van-form>
   </div>
 </template>
