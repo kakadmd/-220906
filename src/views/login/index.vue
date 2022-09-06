@@ -26,6 +26,7 @@
           <span class="toutiao toutiao-shouji"></span>
         </template>
       </van-field>
+
       <van-field
         v-model="code"
         name="code"
