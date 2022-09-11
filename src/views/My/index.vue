@@ -145,7 +145,7 @@ export default {
         if (!this.isLogin) return
 
         const { data } = await getUserInfoAPI()
-
+        console.log(getUserInfoAPI())
         console.log(data)
         this.userInfo = data.data
       } catch (err) {
