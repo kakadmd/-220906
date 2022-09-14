@@ -38,6 +38,7 @@
           :key="item.id"
           :text="item.name"
           icon="plus"
+          @click="$emit('add-channel',item)"
         >
         </van-grid-item>
       </van-grid>
@@ -69,16 +70,18 @@ export default {
       this.allChannels = data.data.channels
     },
     handleMyChannel(item, index) {
-      const { name } = item
+      const { name, id } = item
       // 如果是编辑并且不是推荐才删除频道
       if (this.isEdit && name !== '推荐') {
         // 删除频道
-        console.log('删除', name)
+        // console.log('删除', name)
+        this.$emit('del-channel', id)
       } else {
         // 1.关闭弹窗
+
+        // 2.切换频道
         // 把点击到的index传送给父组件indx.vue，触发父组件的自定义事件
         this.$emit('change-active', index)
-        // 2.切换频道
       }
     }
   },
