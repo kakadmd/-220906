@@ -1,7 +1,10 @@
 <template>
   <div>
     <!-- 二级路由 -->
-    <router-view></router-view>
+    <!-- 左滑进入 -->
+    <transition name="van-slide-left" mode="out-in">
+      <router-view></router-view>
+    </transition>
     <!-- 导航区 -->
     <!-- 路由模式：拿item的to属性和当前路由的path对比，如果一样就高亮 -->
     <van-tabbar route class="tabbar">

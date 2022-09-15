@@ -23,15 +23,16 @@ export default new Vuex.Store({
       storage: window.sessionStorage,
       reducer(state) {
         // console.log(state)
-        const { tokenObj, myChannels } = state
-        return { tokenObj, myChannels }
+        const { tokenObj, myChannels, histories } = state
+        return { tokenObj, myChannels, histories }
       }
     })
   ],
   state: {
     // tokenObj: JSON.parse(window.localStorage.getItem('HEIMATOUTIAO_M')) || {}
     tokenObj: {},
-    myChannels: []
+    myChannels: [],
+    histories: []
   },
   getters: {
     // 用于标识用户是否登录
@@ -46,12 +47,21 @@ export default new Vuex.Store({
       /* // 将token持久化放入本地存储
       window.localStorage.setItem('HEIMATOUTIAO_M', JSON.stringify(token)) */
     },
+
     /**
      *
      * @param {Array} channels 删除或添加后的最新的channels
      */
     SET_MY_CHANNEL(state, channels) {
       state.myChannels = channels
+    },
+
+    /**
+     *
+     * @param {*} histories 传过来一个删除或者添加以后的心得搜索历史
+     */
+    SET_HISTORIES(state, histories) {
+      state.histories = histories
     }
   }
 })
