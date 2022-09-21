@@ -25,7 +25,9 @@
           v-for="item in articles"
           :key="item.art_id"
           :article="item"
+          @click.native="detailsNews(item.art_id)"
         ></ArticleItem>
+        <!-- 事件修饰符 .native ——> 给组件内根标签添加原生click事件 -->
       </van-list>
     </van-pull-refresh>
   </div>
@@ -113,6 +115,12 @@ export default {
         this.loading = false
         this.refreshLoading = false
       }
+    },
+    detailsNews(id) {
+      this.$router.push({
+        name: 'details',
+        params: { id: id }
+      })
     }
   }
 }
@@ -129,11 +137,11 @@ export default {
   // &  代表当前元素他爹
   // ::-webkit-scrollbar 代表滚动条的滚动槽
   // ::-webkit-scrollbar-thumb 代表滚动的滑块
-  &::-webkit-scrollbar{
+  &::-webkit-scrollbar {
     width: 20px;
     background-color: transparent;
   }
-  &::-webkit-scrollbar-thumb{
+  &::-webkit-scrollbar-thumb {
     background-color: cadetblue;
     border-radius: 20px;
   }

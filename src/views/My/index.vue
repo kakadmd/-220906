@@ -34,7 +34,11 @@
               align="center"
               style="height: 100%"
             >
-              <van-button round size="mini" class="editBtn"
+              <van-button
+                round
+                size="mini"
+                class="editBtn"
+                @click="$router.push('/user')"
                 >编辑信息</van-button
               >
             </van-row>
@@ -146,7 +150,7 @@ export default {
 
         const { data } = await getUserInfoAPI()
         console.log(getUserInfoAPI())
-        console.log(data)
+        // console.log(data)
         this.userInfo = data.data
       } catch (err) {
         // 区分error

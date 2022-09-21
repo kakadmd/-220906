@@ -13,11 +13,7 @@
       :title="article.title"
       :label="label"
     >
-      <van-image
-        width="100"
-        height="100"
-        :src="article.cover.images[0]"
-      />
+      <van-image width="100" height="100" :src="article.cover.images[0]" />
     </van-cell>
 
     <!-- 三张图片 -->
@@ -30,7 +26,7 @@
           height="100"
           :src="item"
         />
-        <p>{{label}}</p>
+        <p>{{ label }}</p>
       </template>
     </van-cell>
   </div>
